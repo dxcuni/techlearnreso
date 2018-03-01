@@ -15,8 +15,8 @@
 	 
         .imgBox
         {
-            width: auto;
-            height: auto;
+            width: 130px;
+            height: 90px;
         }
         
         .imgBox:hover {  border: solid 1px #CCC;
@@ -49,14 +49,14 @@
                             <hr class="hrln" />
                         </td>
                         <td width="20%">
-                            <span style="font-size:13pt">Technical Learning Resources123</span>
+                            <span style="font-size:13pt">Guided Learning</span>
                         </td>
                         <td width="40%">
                             <hr class="hrln"  />
                         </td>
                     </tr>
                 </table>
-                     <div id="tblLearning">
+                     <div id="tblGuidedLearning">
 
                     </div>
              
@@ -67,50 +67,39 @@
    
 <script type="text/javascript" language="javascript">
 	var json = JSON.parse(conf);
-	var table = document.getElementById("tblLearning");
+	var table = document.getElementById("tblGuidedLearning");
 	var htmlData = '';
+	//alert(url_home);
 	first = true;
 	var lengthofLoop;
-	var varURLPage
-    
-for (var index = 0; index < json.length; ++index) {
-    if ((json[index].mode) == 2) {
-
-        varURLPage = '<a href="' + url_mode2 + json[index].name + '" target="_blank">';
-    }
-    else if ((json[index].mode) == 3) {
-        varURLPage = '<a href="' + json[index].url + '" target="_blank">';
-    }
-    else {
-
-        varURLPage = '<a href="' + url_home + '/techlearnreso/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank">';
-    }
-
-
-    if (index % 5 == 0) {
-
-        if (first == true) {
-           
-            first = false;
-            htmlData += '<table style="float:left;padding-right:10px;"><tbody><tr style="height: 33px;"><td valign="top" >';
-            htmlData += varURLPage;
-            htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></a></td></tr>';
-        } else {
-           
-            htmlData += '</tbody></table><table style="float:left;padding-right:10px;"><tbody><tr style="height: 33px;"><td valign="top" >';
-            htmlData += varURLPage;
-            htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td></tr>';
-        }
-    } else {
-        
-
-        htmlData += '<tr style="height: 33px;" ><td valign="top">';
-        htmlData += varURLPage;
-        htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td></tr>';
-    }
-}
-htmlData += '</tbody></table>';
-	$("#tblLearning").html(htmlData);
+	if (json.length > 9) {
+	    lengthofLoop = 9
+	}
+	else {
+	    lengthofLoop = json.length
+	}
+	var htmlData = '<table><tr>';
+	for (var index = 0; index < lengthofLoop; ++index) {
+	    if ((index == 5) || (index == 10)) { // Start of next row
+		htmlData += '</tr><tr>'; // Add row separator
+	    }
+	    if ((json[index].mode) == 2){
+		htmlData += '<td valign="top"><a href="' + url_mode2 + json[index].name + '" target="_blank"><img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td>';
+	    }
+	    else if ((json[index].mode) == 3) {
+		htmlData += '<td valign="top"><a href="' + json[index].url + '" target="_blank"><img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td>';
+	    }
+	    else {
+	       htmlData += '<td valign="top"><a href="' + url_home + '/learning_guide/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank"><img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td>';
+	    }
+	}
+	//Added for the fixed cell for more 
+	if (lengthofLoop > 8) {    
+	    htmlData += '<td valign="top"><a href="' + url_mode2 + 'conf" target="_blank"><img src="' + url_image + mode2Image + '" class="imgBox" /></a></td>';
+	}
+	htmlData += '</tr></table>';
+	console.log(htmlData)
+	$("#tblGuidedLearning").html(htmlData);
 </script>
     ]]>
 
