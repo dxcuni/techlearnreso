@@ -1,171 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<module>
-  <ModulePrefs title="Learning Resources" />
-
+<Module>
+  <ModulePrefs title="Learning Guide" />
   <Content type="html" view="home">
 
     <![CDATA[     
-       
+       <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
+	<script type="text/javascript" src="../res/json/conf.js"></script>
+        <script type="text/javascript" src="../res/json/mode2conf.js"></script>
+         <script type="text/javascript" src="../res/js/vars.js"></script>
+
      <style type="text/css">
-         .imgBox
-         {
-             width: 130px;
-             height: 55px;
-         }
-         
-         .imgBox:hover
-         {
-             border: solid 1px #CCC;
-             -moz-box-shadow: 1px 1px 5px #999;
+		
+		body {font-family: Arial, Helvetica, Sans-serif;}
+	 
+        .imgBox
+        {
+            width: auto;
+            height: auto;
+        }
+        
+        .imgBox:hover {  border: solid 1px #CCC;
+            -moz-box-shadow: 1px 1px 5px #999;
              -webkit-box-shadow: 1px 1px 5px #999;
-             box-shadow: 1px 1px 5px #999;
-         }
-         
-         
-         .fontfamily
-         {
-             font-family: arial, helvetica, sans-serif;
-             font-size: 13pt;
-         }
-         .fontfamily2
-         {
-             font-family: arial, helvetica, sans-serif;
-             font-size: 9pt;
-         }
-         
-         .outerTable
-         {
-             width: 40%;
-             height: 250px;
-         }
-         
-         .hrln
-         {
-             height: 1.5px;
-             border: none;
-             color: #333;
-             background-color: #333;
-         }
-     </style>
-
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-    </script>
-    <script language="javascript" type="text/javascript">
-        linkHper();
-        function linkHper() {
-
-            var link;
-            var flink1;
-            var flink2;
-
-            $.get("res/link/LinkURL.txt",
-               function (txt, status, jqXHR) {
-
-                   var lines = txt.split("\n");
-                   for (var i = 0, len = lines.length; i < len; i++) {
-
-                       link = lines[i].split('=');
-                       flink1 = link[0];
-                       flink2 = link[1];
-                       document.getElementById(flink1).href = flink2;
-                   }
-               },
-        "text"
-     );
-
-   }
+             box-shadow: 1px 1px 5px #999;}   
+             
+        .outerTable
+        {
+            //border: 1px solid black;          
+            width: 40%;                    
+            height:250px;
+        }
+        .hrln
+        {
+            height: 1.5px; 
+            border: none; 
+            color: #333; 
+            background-color: #333;
+        }
+    </style>
     
-    </script>
+    <div ng-app="myApp" ng-controller="myCtrl">
     <table class="outerTable">
         <tr>
             <td colspan="2">
                 <table width="100%">
                     <tr>
-                        <td width="32%">
+                        <td width="40%">
                             <hr class="hrln" />
                         </td>
-                        <td width="36%" align="center">
-                            <span style="font-size: 13pt">Technical Learning Resources</span>
+                        <td width="20%">
+                            <span style="font-size:13pt">Technical Learning Resources123</span>
                         </td>
-                        <td width="34%">
-                            <hr class="hrln" />
+                        <td width="40%">
+                            <hr class="hrln"  />
                         </td>
                     </tr>
                 </table>
-                <table width="100%">
-                    <tr>
-                        <td valign="top" width="33%" align="center">
-                            <a id="01" href="" target="_blank">
-                                <img src="../res/images/01.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                            <a id="02" href="" target="_blank">
-                                <img src="../res/images/02.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                            <a id="03" href="" target="_blank">
-                                <img src="../res/images/03.jpg" class="imgBox" /></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" width="33%" align="center">
-                            <a id="04" href="" target="_blank">
-                                <img src="../res/images/04.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                            <a id="05" href="" target="_blank">
-                                <img src="../res/images/05.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                            <a id="06"  target="_blank">
-                                <img src="../res/images/06.jpg" class="imgBox" /></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" width="33%" align="center">
-                            <a id="07"  target="_blank">
-                                <img src="../res/images/07.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                            <a id="08" target="_blank">
-                                <img src="../res/images/08.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                            <a id="09" target="_blank">
-                                <img src="../res/images/09.jpg" class="imgBox" /></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" width="33%" align="center">
-                            <a id="10" target="_blank">
-                                <img src="../res/images/10.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                            <a id="11" target="_blank">
-                                <img src="../res/images/11.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top" width="33%" align="center">
-                            <a id="12" target="_blank">
-                                <img src="../res/images/12.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                            <a id="13" target="_blank">
-                                <img src="../res/images/13.jpg" class="imgBox" /></a>
-                        </td>
-                        <td valign="top" width="33%" align="center">
-                        </td>
-                    </tr>
-                </table>
+                     <div id="tblLearning">
+
+                    </div>
+             
             </td>
         </tr>
     </table>
+    </div>
+   
+<script type="text/javascript" language="javascript">
+	var json = JSON.parse(conf);
+	var table = document.getElementById("tblLearning");
+	var htmlData = '';
+	first = true;
+	var lengthofLoop;
+	var varURLPage
     
+for (var index = 0; index < json.length; ++index) {
+    if ((json[index].mode) == 2) {
+
+        varURLPage = '<a href="' + url_mode2 + json[index].name + '" target="_blank">';
+    }
+    else if ((json[index].mode) == 3) {
+        varURLPage = '<a href="' + json[index].url + '" target="_blank">';
+    }
+    else {
+
+        varURLPage = '<a href="' + url_home + '/techlearnreso/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank">';
+    }
+
+
+    if (index % 5 == 0) {
+
+        if (first == true) {
+           
+            first = false;
+            htmlData += '<table style="float:left;padding-right:10px;"><tbody><tr style="height: 33px;"><td valign="top" >';
+            htmlData += varURLPage;
+            htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></a></td></tr>';
+        } else {
+           
+            htmlData += '</tbody></table><table style="float:left;padding-right:10px;"><tbody><tr style="height: 33px;"><td valign="top" >';
+            htmlData += varURLPage;
+            htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td></tr>';
+        }
+    } else {
+        
+
+        htmlData += '<tr style="height: 33px;" ><td valign="top">';
+        htmlData += varURLPage;
+        htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td></tr>';
+    }
+}
+htmlData += '</tbody></table>';
+	$("#tblLearning").html(htmlData);
+</script>
     ]]>
 
+    
     
   </Content>
   <Content type="html" view="canvas">
@@ -173,4 +122,4 @@
       
      ]]>
   </Content>
-</module>
+</Module>
