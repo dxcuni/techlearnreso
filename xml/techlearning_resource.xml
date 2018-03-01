@@ -49,7 +49,7 @@
                             <hr class="hrln" />
                         </td>
                         <td width="20%">
-                            <span style="font-size:13pt">Technical Learning Resources</span>
+                            <span style="font-size:13pt">Technical Learning Resources123</span>
                         </td>
                         <td width="40%">
                             <hr class="hrln"  />
@@ -94,19 +94,19 @@ for (var index = 0; index < json.length; ++index) {
             first = false;
             htmlData += '<table style="float:left;padding-right:10px;"><tbody><tr style="height: 33px;"><td valign="top" >';
             htmlData += varURLPage;
-            htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></a></td></tr>';
+            htmlData += '<img src="' + url_image + json[index].name + '.jpg" /></a></td></tr>';
         } else {
            
             htmlData += '</tbody></table><table style="float:left;padding-right:10px;"><tbody><tr style="height: 33px;"><td valign="top" >';
             htmlData += varURLPage;
-            htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td></tr>';
+            htmlData += '<img src="' + url_image + json[index].name + '.jpg"  /></a></td></tr>';
         }
     } else {
         
 
         htmlData += '<tr style="height: 33px;" ><td valign="top">';
         htmlData += varURLPage;
-        htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox" /></a></td></tr>';
+        htmlData += '<img src="' + url_image + json[index].name + '.jpg"  /></a></td></tr>';
     }
 }
 htmlData += '</tbody></table>';
