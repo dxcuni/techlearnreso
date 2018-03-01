@@ -6,7 +6,7 @@
     <![CDATA[     
        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
 	<script type="text/javascript" src="../res/json/conf.js"></script>
-        <script type="text/javascript" src="../res/json/mode2conf.js"></script>
+        
          <script type="text/javascript" src="../res/js/vars.js"></script>
 
      <style type="text/css">
@@ -49,7 +49,7 @@
                             <hr class="hrln" />
                         </td>
                         <td width="20%">
-                            <span style="font-size:13pt">Guided Learning</span>
+                            <span style="font-size:13pt">Technical Learning Resources</span>
                         </td>
                         <td width="40%">
                             <hr class="hrln"  />
@@ -83,7 +83,7 @@ for (var index = 0; index < json.length; ++index) {
     }
     else {
 
-        varURLPage = '<a href="' + url_home + '/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank">';
+        varURLPage = '<a href="' + url_home + '/techlearnreso/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank">';
     }
 
 
