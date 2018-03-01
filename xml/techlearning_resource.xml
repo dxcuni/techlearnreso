@@ -14,8 +14,8 @@
 	 
         .imgBox
         {
-            width: 130px;
-            height: 90px;
+            width: auto;
+            height: auto;
         }
         
         .imgBox:hover {  border: solid 1px #CCC;
@@ -27,7 +27,7 @@
         {
             //border: 1px solid black;          
             width: 40%;                    
-            height:250px;
+            height:220px;
         }
         .hrln
         {
@@ -67,9 +67,13 @@
 <script type="text/javascript" language="javascript">
 	var json = JSON.parse(conf);
 	var table = document.getElementById("tblLearning");
+	
+	var html = '';
 	var varURLPage
 	first = true;
-	var htmlData = '<table><tr>';	
+
+	var htmlData = '<table><tr>';
+	
 
 for (var index = 0; index < json.length; ++index) {
     if ((json[index].mode) == 2) {        
@@ -87,16 +91,16 @@ for (var index = 0; index < json.length; ++index) {
             first = false;
             htmlData += '<td valign="top"><table><tbody><tr ><td valign="top" class="tooltip">';
             htmlData += varURLPage;
-            htmlData += '<img src="' + url_image + json[index].name + '.jpg"  /></a></td></tr>';
+            htmlData += '<img src="' + url_image + json[index].name + '.jpg"  class="imgBox"/></a></td></tr>';
         } else {
             htmlData += '</tbody></table><td valign="top"><table><tbody><tr ><td valign="top" class="tooltip">';
             htmlData += varURLPage;
-            htmlData += '<img src="' + url_image + json[index].name + '.jpg" /></a></td></tr>';
+            htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></a></td></tr>';
         }
     } else {
         htmlData += '<tr><td valign="top" class="tooltip">';
         htmlData += varURLPage;
-        htmlData += '<img src="' + url_image + json[index].name + '.jpg"  /></a></td></tr>';
+        htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></a></td></tr>';
     }
 }
 htmlData += '</tbody></table></tr></table>';
