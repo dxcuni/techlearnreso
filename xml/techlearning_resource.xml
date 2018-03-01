@@ -27,7 +27,7 @@
         .outerTable
         {
             //border: 1px solid black;          
-            width: 40%;                    
+            width: 20%;                    
             height:250px;
         }
         .hrln
