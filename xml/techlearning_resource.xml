@@ -79,7 +79,7 @@
 	    lengthofLoop = json.length
 	}
 	var htmlData = '<table><tr>';
-	for (var index = 0; index < lengthofLoop; ++index) {
+	for (var index = 0; index < json.length; ++index) {
 	    if ((index == 5) || (index == 10)) { // Start of next row
 		htmlData += '</tr><tr>'; // Add row separator
 	    }
