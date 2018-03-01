@@ -15,7 +15,7 @@
 	 
         .imgBox
         {
-            width: auto;
+            width: 250px;
             height: 30px;
         }
         
@@ -43,7 +43,7 @@
     <table class="outerTable">
         <tr>
             <td colspan="2">
-                <table width="50%">
+                <table width="100%">
                     <tr>
                         <td width="40%">
                             <hr class="hrln" />
@@ -56,12 +56,12 @@
                         </td>
                     </tr>
                 </table>
-                     <div id="tblGuidedLearning">
-
-                    </div>
-             
             </td>
         </tr>
+<tr><td>
+  <div id="tblGuidedLearning">
+</div>
+</td></tr>
     </table>
     </div>
    
