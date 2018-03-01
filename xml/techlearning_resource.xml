@@ -15,8 +15,8 @@
 	 
         .imgBox
         {
-            width: 130px;
-            height: 90px;
+            width: auto;
+            height: auto;
         }
         
         .imgBox:hover {  border: solid 1px #CCC;
