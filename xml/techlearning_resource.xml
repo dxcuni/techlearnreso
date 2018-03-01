@@ -67,42 +67,40 @@
 <script type="text/javascript" language="javascript">
 	var json = JSON.parse(conf);
 	var table = document.getElementById("tblLearning");
-	var htmlData = '';
-	var html = '';
 	var varURLPage
 	first = true;
+	var htmlData = '<table><tr>';	
 
-	var htmlData = '<table><tr>';
-	for (var index = 0; index < lengthofLoop; ++index) {
-		 if ((json[index].mode) == 2) {        
-			varURLPage =  '<a href="' + url_mode2 + json[index].name + '" target="_blank">';
-			}
-			else if ((json[index].mode) == 3) {        
-				varURLPage = '<a href="' + json[index].url + '" target="_blank">';
-			}
-			else {                
-			varURLPage = '<a href="' + url_home + '/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank">';
+for (var index = 0; index < json.length; ++index) {
+    if ((json[index].mode) == 2) {        
+        varURLPage =  '<a href="' + url_mode2 + json[index].name + '" target="_blank">';
+    }
+    else if ((json[index].mode) == 3) {        
+        varURLPage = '<a href="' + json[index].url + '" target="_blank">';
+    }
+    else {                
+        varURLPage = '<a href="' + url_home + '/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank">';
        }
-	
-	
-	     if (index % 5 == 0) {
-			if (first == true) {
-				first = false;
-				htmlData += '<td valign="top"><table><tbody><tr ><td valign="top" class="tooltip">';
-				htmlData += varURLPage;
-				htmlData += '<img src="' + url_image + json[index].name + '.jpg"  /></a></td></tr>';
-			} else {
-				htmlData += '</tbody></table><td valign="top"><table><tbody><tr ><td valign="top" class="tooltip">';
-				htmlData += varURLPage;
-				htmlData += '<img src="' + url_image + json[index].name + '.jpg" /></a></td></tr>';
-			}
-		} else {
-        htmlData += '<tr ><td valign="top" class="tooltip">';
+    
+    if (index % 5 == 0) {
+        if (first == true) {
+            first = false;
+            htmlData += '<td valign="top"><table><tbody><tr ><td valign="top" class="tooltip">';
+            htmlData += varURLPage;
+            htmlData += '<img src="' + url_image + json[index].name + '.jpg"  /></a></td></tr>';
+        } else {
+            htmlData += '</tbody></table><td valign="top"><table><tbody><tr ><td valign="top" class="tooltip">';
+            htmlData += varURLPage;
+            htmlData += '<img src="' + url_image + json[index].name + '.jpg" /></a></td></tr>';
+        }
+    } else {
+        htmlData += '<tr><td valign="top" class="tooltip">';
         htmlData += varURLPage;
         htmlData += '<img src="' + url_image + json[index].name + '.jpg"  /></a></td></tr>';
-		}
-	}
+    }
+}
 htmlData += '</tbody></table></tr></table>';
+
 console.log(htmlData)
 $("#tblLearning").html(htmlData);
 </script>
