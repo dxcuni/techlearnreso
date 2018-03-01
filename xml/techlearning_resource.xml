@@ -49,7 +49,7 @@
                             <hr class="hrln" />
                         </td>
                         <td width="40%">
-                            <span style="font-size:13pt">Technical Learning Resources</span>
+                            <span style="font-size:13pt">Technical Learning Resources 12</span>
                         </td>
                         <td width="30%">
                             <hr class="hrln"  />
@@ -110,7 +110,7 @@ for (var index = 0; index < json.length; ++index) {
     }
 }
 htmlData += '</tbody></table>';
-	$("#tblLearning").html(htmlData);
+	//$("#tblLearning").html(htmlData);
 </script>
     ]]>
 
