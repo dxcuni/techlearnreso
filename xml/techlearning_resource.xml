@@ -16,6 +16,7 @@
         {
             width: 210px;
             height:35px;
+	    position:relative;
         }
       
              
@@ -23,7 +24,7 @@
         {
             //border: 1px solid black;          
             width: 50%;                    
-            height:250px;
+            height:200px;
         }
         .hrln
         {
@@ -60,7 +61,7 @@
                             <hr class="hrln" />
                         </td>
                         <td width="36%">
-                            <span style="font-size:13pt">Technical Learning Resources</span>
+                            <span style="font-size:13pt">Technical Learning*Resources</span>
                         </td>
                         <td width="35%">
                             <hr class="hrln"  />
