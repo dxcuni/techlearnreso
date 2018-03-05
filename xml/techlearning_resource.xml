@@ -15,7 +15,7 @@
         .imgBox
         {
             width: 210px;
-            height:22px;
+            height:23px;
 	    position:relative;
         }
       
