@@ -14,15 +14,10 @@
 	 
         .imgBox
         {
-            width: auto;
-            height: auto;
+            width: 250px;
+            height: 35px;
         }
-        
-        .imgBox:hover {  border: solid 1px blue;
-			opacity: 1;
-            -moz-box-shadow: 1px 1px 5px #999;
-             -webkit-box-shadow: 1px 1px 5px #999;
-             box-shadow: 1px 1px 5px #999;}   
+      
              
         .outerTable
         {
@@ -37,6 +32,22 @@
             color: #333; 
             background-color: #333;
         }
+		 * {
+			font-weight: 100; box-sizing: border-box;
+		}
+		.defaultBox {
+			padding: 1px; width: 250px; vertical-align: top; display: inline-block;
+		}
+		.defaultBox a {
+			padding: 2px; border: 1px solid rgb(210, 210, 210); transition:background-color 0.6s; border-image: none; width: 100%; height: 40px; display: block; position: relative; background-color: rgb(255,255,255);
+		}
+		.defaultBox a:hover {
+			border: 2px solid rgb(0, 114, 198); border-image: none; cursor: pointer;
+		}
+
+		.defaultBox a .imageContainer img {
+			max-width: 100%;
+		}
     </style>
     
     <div ng-app="myApp" ng-controller="myCtrl">
@@ -78,35 +89,35 @@
 
 for (var index = 0; index < json.length; ++index) {
     if ((json[index].mode) == 2) {        
-        varURLPage =  '<a href="' + url_mode2 + json[index].name + '" target="_blank">';
+        varURLPage =  '<div class="defaultBox"><a href="' + url_mode2 + json[index].name + '" target="_blank">';
     }
     else if ((json[index].mode) == 3) {        
-        varURLPage = '<a href="' + json[index].url + '" target="_blank">';
+        varURLPage = '<div class="defaultBox"><a href="' + json[index].url + '" target="_blank">';
     }
     else {                
-        varURLPage = '<a href="' + url_home + '/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank">';
+        varURLPage = '<div class="defaultBox"><a href="' + url_home + '/pages/' + json[index].name + '/' + json[index].name + '.html" target="_blank">';
        }
     
     if (index % 5 == 0) {
         if (first == true) {
             first = false;
-            htmlData += '<td valign="top"><table><tbody><tr ><td valign="top" class="tooltip">';
+            htmlData += '<td valign="top"><table><tbody><tr ><td valign="top">';
             htmlData += varURLPage;
-            htmlData += '<img src="' + url_image + json[index].name + '.jpg"  class="imgBox"/></a></td></tr>';
+            htmlData += '<div class="imageContainer"><img src="' + url_image + json[index].name + '.jpg"  class="imgBox"/></div></a></div></td></tr>';
         } else {
-            htmlData += '</tbody></table><td valign="top"><table><tbody><tr ><td valign="top" class="tooltip">';
+            htmlData += '</tbody></table><td valign="top"><table><tbody><tr ><td valign="top">';
             htmlData += varURLPage;
-            htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></a></td></tr>';
+            htmlData += '<div class="imageContainer"><img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></div></a></div></td></tr>';
         }
     } else {
-        htmlData += '<tr><td valign="top" class="tooltip">';
+        htmlData += '<tr><td valign="top">';
         htmlData += varURLPage;
-        htmlData += '<img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></a></td></tr>';
+        htmlData += '<div class="imageContainer"><img src="' + url_image + json[index].name + '.jpg" class="imgBox"/></div></a></div></td></tr>';
     }
 }
 htmlData += '</tbody></table></tr></table>';
 
-console.log(htmlData)
+
 $("#tblLearning").html(htmlData);
 </script>
     ]]>
