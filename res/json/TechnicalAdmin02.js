@@ -1,1 +1,0 @@
-conf = '[{"name":"Page2Admin02","description":"Page2Admin02","mode":"1","url":"http://"},{"name":"Admin02Mode2","description":"Admin02Mode2","mode":"2","url":"http://"},{"name":"Admin02Mode3","description":"Admin02Mode3","mode":"3","url":"https://my.dxc.com/"}]';
